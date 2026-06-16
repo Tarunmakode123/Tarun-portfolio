@@ -8,47 +8,37 @@ interface ProjectData {
   category: string;
   name: string;
   liveUrl: string;
-  col1Image1: string;
-  col1Image2: string;
-  col2Image: string;
+  image: string;
 }
 
 const PROJECTS: ProjectData[] = [
-    {
-        number: '01',
-        category: 'Personal',
-        name: 'Forge',
-        liveUrl: 'https://forge-pink-seven.vercel.app/',
-        col1Image1: '/Forge.png',
-        col1Image2: '/Forge1.png',
-        col2Image: '/Forge2.png',
-      },
   {
-      number: '02',
-      category: 'Personal',
-      name: 'LawLab',
-      liveUrl: 'https://lawlab-self.vercel.app',
-      col1Image1: '/lawlab.png',
-      col1Image2: '/lawlab1.png',
-      col2Image: '/lawlab2.png',
-    },
+    number: '01',
+    category: 'Personal · Marketplace',
+    name: 'AgentHub – AI Agent Marketplace',
+    liveUrl: 'https://ai-agent-marketplace-eta.vercel.app',
+    image: '/project1.png',
+  },
+  {
+    number: '02',
+    category: 'Institutional · Placement Platform',
+    name: 'PlaceIQ – Placement Management Platform',
+    liveUrl: 'https://placementiq-suite.vercel.app',
+    image: '/project 2.png',
+  },
   {
     number: '03',
-    category: 'Personal · GenAI',
-    name: 'ResumeIQ',
-    liveUrl: 'https://resumeiq-harsh.vercel.app/',
-    col1Image1: '/resumeiq-hero.png',
-    col1Image2: '/resumeiq-feedback.png',
-    col2Image: '/resumeiq-score.png',
+    category: 'Automation · SaaS',
+    name: 'CampusShortlist – Automated Eligibility Filtering',
+    liveUrl: 'https://talent-filter-pro.vercel.app',
+    image: '/project 3.png',
   },
   {
     number: '04',
-    category: 'Personal · Design',
-    name: 'Notch',
-    liveUrl: 'https://notch-zeta.vercel.app/',
-    col1Image1: '/notch-hero.png',
-    col1Image2: '/notch-pricing.png',
-    col2Image: '/notch-mockup.png',
+    category: 'GovTech · Discovery Platform',
+    name: 'SarkariSahayak – Government Scheme Discovery Platform',
+    liveUrl: 'https://scheme-seeker-nine.vercel.app',
+    image: '/project 4.png',
   },
 ];
 
@@ -114,41 +104,15 @@ const ProjectCard = ({ project, index, total, containerRef }: ProjectCardProps) 
                     </div>
                   </div>
 
-        {/* Bottom row: two-column image grid */}
-        <div className="grid grid-cols-[40%_60%] gap-3 sm:gap-4 md:gap-5 flex-1 min-h-0">
-          {/* Left column - 2 stacked */}
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 min-h-0">
-            <div
-              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
-            >
-              <img
-                src={project.col1Image1}
-                alt={`${project.name} preview 1`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                draggable={false}
-              />
-            </div>
-            <div
-              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-            >
-              <img
-                src={project.col1Image2}
-                alt={`${project.name} preview 2`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                draggable={false}
-              />
-            </div>
-          </div>
-
-          {/* Right column - 1 tall */}
-          <div className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px] min-h-0">
+        {/* Bottom row: single large image */}
+        <div className="flex-1 min-h-0">
+          <div
+            className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px] h-full"
+            style={{ height: 'clamp(260px, 30vw, 520px)' }}
+          >
             <img
-              src={project.col2Image}
-              alt={`${project.name} preview 3`}
+              src={project.image}
+              alt={`${project.name} preview`}
               className="h-full w-full object-cover"
               loading="lazy"
               draggable={false}

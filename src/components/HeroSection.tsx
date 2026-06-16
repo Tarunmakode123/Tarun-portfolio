@@ -10,8 +10,17 @@ const NAV_LINKS = [
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [showSoundHint, setShowSoundHint] = useState(true);
+
+  const ensurePlaying = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const playPromise = v.play();
+    if (playPromise) {
+      playPromise.catch(() => {});
+    }
+  };
 
   // Auto-hide "Tap for sound" hint after 5 seconds
   useEffect(() => {
@@ -19,19 +28,40 @@ const HeroSection = () => {
     return () => clearTimeout(t);
   }, []);
 
-  // Auto-mute video when scrolling past hero
+  // Keep the video alive while scrolling so it does not stop off-screen
+  useEffect(() => {
+    ensurePlaying();
+
+    const onVisibilityChange = () => {
+      if (!document.hidden) {
+        ensurePlaying();
+      }
+    };
+
+    const onScroll = () => {
+      const v = videoRef.current;
+      if (v?.paused) {
+        ensurePlaying();
+      }
+    };
+
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  // Make sure playback resumes whenever the hero comes back into view
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
-          const v = videoRef.current;
-          if (v && !v.muted) {
-            v.muted = true;
-            setMuted(true);
-          }
+        if (entry.isIntersecting) {
+          ensurePlaying();
         }
       },
       { threshold: 0, rootMargin: '-50% 0px 0px 0px' }
@@ -90,13 +120,13 @@ const HeroSection = () => {
       <video
         ref={videoRef}
         autoPlay
-        muted
+        muted={muted}
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-top"
       >
-        <source src="/intro.mp4" type="video/mp4" />
+        <source src="/tarun-avator-potfolio-video.mp4" type="video/mp4" />
       </video>
 
       {/* Cinematic gradient overlays */}
@@ -135,7 +165,7 @@ const HeroSection = () => {
           <div className="w-full max-w-7xl px-6 md:px-10">
             <FadeIn delay={0.3} y={20}>
               <p className="mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] text-white/60">
-                Portfolio · 2026
+                PORTFOLIO · 2026
               </p>
             </FadeIn>
 
@@ -144,13 +174,13 @@ const HeroSection = () => {
                 className="font-black uppercase leading-[0.88] tracking-tight text-white"
                 style={{ fontSize: 'clamp(3rem, 12vw, 10.5rem)' }}
               >
-                Harsh<br />Goyal
+                TARUN<br />KUMAR MAKODE
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.85} y={20}>
               <p className="mt-5 md:mt-7 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.3em] text-white/75">
-                Developer · Designer · GenAI Integration
+                AI DEVELOPER · CONTENT CREATOR · AUTOMATION
               </p>
             </FadeIn>
           </div>
@@ -181,7 +211,7 @@ const HeroSection = () => {
                   className="hidden sm:inline text-[10px] font-medium uppercase tracking-[0.25em] text-white/80"
                   style={{ animation: 'pulseFade 2s ease-in-out infinite' }}
                 >
-                  Tap for sound
+                  Tap to mute
                 </span>
               )}
               <button

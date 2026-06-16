@@ -1,6 +1,6 @@
-# Harsh Goyal — Developer & Designer Portfolio
+# Tarun Kumar Makode — AI Developer & Content Creator Portfolio
 
-A dark-themed personal portfolio for **Harsh Goyal** — Computer Science graduate from NSUT, currently a Content R&D Trainee at PhysicsWallah. Focused on UI/UX, front-end development, and GenAI integration.
+A dark-themed personal portfolio for **Tarun Kumar Makode** — focused on AI development, content creation, and automation.
 
 Built with **React + TypeScript + Vite + Tailwind CSS + Framer Motion**. Designed for one-click deployment on **Vercel**.
 
@@ -59,7 +59,7 @@ src/
 
 | Project | Live | Built with |
 |---|---|---|
-| ResumeIQ | [resumeiq-harsh.vercel.app](https://resumeiq-harsh.vercel.app) | React, Gemini API, Vercel |
+| ResumeIQ | [resumeiq-tarun.vercel.app](https://resumeiq-tarun.vercel.app) | React, Gemini API, Vercel |
 | Notch | [notch-zeta.vercel.app](https://notch-zeta.vercel.app) | React, Tailwind, Framer Motion |
 
 ## Customisation
@@ -77,4 +77,4 @@ src/
 
 ## Credits
 
-Designed & built by **Harsh Goyal** · [LinkedIn](https://www.linkedin.com/in/harsh-goyal-7900b2256/) · [GitHub](https://github.com/harshgoyal27)
+Designed & built by **Tarun Kumar Makode** · [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile/) · [GitHub](https://github.com/your-github-handle)
