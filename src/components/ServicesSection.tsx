@@ -1,36 +1,41 @@
+import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-
 
 const SERVICES = [
   {
     number: '01',
-    title: 'UI/UX Design',
+    title: 'AI Product Development',
+    keywords: 'OpenAI • Gemini • Claude • RAG',
     description:
-      'Designing clean, intuitive interfaces that prioritise user flow, hierarchy, and visual clarity — turning ideas into experiences people actually enjoy using.',
+      'Building intelligent products powered by modern AI technologies. From concept to deployment, I create practical solutions that solve real-world problems using large language models, automation, and scalable architectures.',
   },
   {
     number: '02',
-    title: 'Front-end Development',
+    title: 'AI Agents & Automation',
+    keywords: 'n8n • APIs • Workflows • Integrations',
     description:
-      'Building responsive, performant web apps with React, TypeScript, and Tailwind — pixel-perfect on every screen, deployed seamlessly on Vercel.',
+      'Designing AI agents and automated workflows that eliminate repetitive tasks, improve efficiency, and help businesses scale operations with minimal manual intervention.',
   },
   {
     number: '03',
-    title: 'GenAI Integration',
+    title: 'LLM Integration',
+    keywords: 'Prompt Engineering • Function Calling • RAG • APIs',
     description:
-      'Wiring large language models into real products via Gemini, Claude, and OpenAI APIs — from resume reviewers to AI tutors and beyond.',
+      'Integrating large language models into applications, internal tools, and customer experiences. Creating seamless AI-powered features that deliver real value to users.',
   },
   {
     number: '04',
-    title: 'Prompt Engineering & LLM Automation',
+    title: 'Full-Stack Development',
+    keywords: 'React • Next.js • Tailwind • JavaScript',
     description:
-      'Crafting reliable prompts and automation flows that turn LLMs into production-grade tools for content, analysis, and decision support.',
+      'Building fast, modern, and scalable web applications using React, Next.js, Tailwind CSS, and cloud deployment platforms with a strong focus on performance and user experience.',
   },
   {
     number: '05',
-    title: 'Data Analysis & Visualization',
+    title: 'Data Analytics & Insights',
+    keywords: 'Python • Pandas • SQL • Power BI',
     description:
-      'Exploring datasets with Python (Pandas, NumPy, Seaborn) and Power BI — turning raw numbers into clear insights and dashboards stakeholders can act on.',
+      'Transforming raw data into meaningful insights through analysis, visualization, dashboards, and reporting systems that support better decision-making.',
   },
 ];
 
@@ -40,53 +45,78 @@ const ServicesSection = () => {
       id="services"
       className="relative w-full bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
-      <FadeIn y={40}>
+      <FadeIn y={40} duration={0.85}>
         <h2
           className="text-center font-black uppercase text-[#0C0C0C] mb-16 sm:mb-20 md:mb-28 leading-none"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Services
+          What I Build
         </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm font-medium uppercase tracking-[0.22em] text-[#0C0C0C]/66 sm:text-base">
+          AI products, intelligent automation, and scalable digital solutions.
+        </p>
+        <div className="mx-auto mt-7 h-px w-24 bg-[#0C0C0C]/12 sm:mt-8" />
       </FadeIn>
 
       <div className="mx-auto max-w-5xl">
         {SERVICES.map((service, i) => (
           <FadeIn key={service.number} delay={i * 0.1} y={30}>
-            <div
-              className="flex flex-row items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12"
+            <motion.div
+              className="group flex cursor-default flex-row items-start gap-6 py-8 sm:gap-10 sm:py-10 md:gap-14 md:py-12"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.45 }}
+              transition={{
+                duration: 0.55,
+                delay: i * 0.06,
+                ease: [0.22, 0.61, 0.36, 1],
+              }}
+              whileHover="hover"
+              whileTap={{ scale: 0.995 }}
               style={{
-                borderTop: '1px solid rgba(12, 12, 12, 0.15)',
+                borderTop: '1px solid rgba(12, 12, 12, 0.14)',
                 ...(i === SERVICES.length - 1
-                  ? { borderBottom: '1px solid rgba(12, 12, 12, 0.15)' }
+                  ? { borderBottom: '1px solid rgba(12, 12, 12, 0.14)' }
                   : {}),
               }}
             >
-              <div
-                className="shrink-0 font-black text-[#0C0C0C] leading-none"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+              <motion.div
+                className="shrink-0 font-black leading-none text-[#0C0C0C]"
+                style={{ fontSize: 'clamp(2.35rem, 7.8vw, 112px)' }}
+                variants={{ hover: { scale: 1.04 } }}
+                transition={{ duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
               >
                 {service.number}
-              </div>
+              </motion.div>
 
-              <div className="group flex flex-col gap-3 sm:gap-4 md:gap-5 pt-2 sm:pt-3 md:pt-4">
-                <h3
-                  className="font-medium uppercase text-[#0C0C0C] leading-tight relative inline-block w-fit"
+              <div className="group flex flex-col gap-3 pt-2 sm:gap-4 sm:pt-3 md:gap-5 md:pt-4">
+                <motion.h3
+                  className="relative inline-block w-fit font-medium uppercase leading-tight text-[#0C0C0C]"
                   style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
+                  variants={{ hover: { x: 7 } }}
+                  transition={{ duration: 0.38, ease: [0.22, 0.61, 0.36, 1] }}
                 >
                   {service.title}
-                  <span className="absolute left-0 -bottom-1 h-px w-0 bg-[#0C0C0C]/60 transition-all duration-500 group-hover:w-full" />
-                </h3>
-                <p
-                  className="font-light leading-relaxed text-[#0C0C0C] max-w-2xl"
+                  <span className="absolute left-0 -bottom-1 h-px w-0 bg-[#0C0C0C]/60 transition-all duration-500 group-hover:w-full group-hover:bg-[#0C0C0C]/88" />
+                </motion.h3>
+
+                <p className="text-[11px] font-medium uppercase tracking-[0.38em] text-[#0C0C0C]/52 transition-opacity duration-300 group-hover:text-[#0C0C0C]/70 sm:text-xs">
+                  {service.keywords}
+                </p>
+
+                <motion.p
+                  className="max-w-[32rem] font-light leading-[1.8] text-[#0C0C0C]"
                   style={{
-                    fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)',
-                    opacity: 0.6,
+                    fontSize: 'clamp(0.95rem, 1.05vw, 1rem)',
+                    opacity: 0.78,
                   }}
+                  variants={{ hover: { opacity: 0.9 } }}
+                  transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
                 >
                   {service.description}
-                </p>
+                </motion.p>
               </div>
-            </div>
+            </motion.div>
           </FadeIn>
         ))}
       </div>
