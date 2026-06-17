@@ -17,8 +17,8 @@ Built with **React + TypeScript + Vite + Tailwind CSS + Framer Motion**. Designe
 
 1. **Hero** — name, tagline, magnetic-hover portrait
 2. **About** — bio + skills grouped by Languages / Frameworks / Tools / AI
-3. **Services** — UI/UX Design, Web Design, Front-end Development, GenAI Integration
-4. **Projects** — sticky-stacking cards for AI Tutor, PiLearn, ResumeIQ, Notch
+3. **Capabilities** — What I Build: Full-Stack AI Products, Automation Systems, SaaS Platforms, Gen AI Integration, GovTech Solutions
+4. **Projects** — sticky-stacking cards for AgentHub, PlaceIQ, CampusShortlist, SarkariSahayak
 5. **Contact** — Email, WhatsApp, LinkedIn, GitHub
 
 ## Run locally
@@ -59,8 +59,10 @@ src/
 
 | Project | Live | Built with |
 |---|---|---|
-| ResumeIQ | [resumeiq-tarun.vercel.app](https://resumeiq-tarun.vercel.app) | React, Gemini API, Vercel |
-| Notch | [notch-zeta.vercel.app](https://notch-zeta.vercel.app) | React, Tailwind, Framer Motion |
+| AgentHub | [ai-agent-marketplace-eta.vercel.app](https://ai-agent-marketplace-eta.vercel.app) | React, TypeScript, Vite, Tailwind, Framer Motion |
+| PlaceIQ | [placementiq-suite.vercel.app](https://placementiq-suite.vercel.app) | React, TypeScript, Institutional Platform |
+| CampusShortlist | [talent-filter-pro.vercel.app](https://talent-filter-pro.vercel.app) | React, Automation, SaaS |
+| SarkariSahayak | [scheme-seeker-nine.vercel.app](https://scheme-seeker-nine.vercel.app) | React, GovTech, Discovery Platform |
 
 ## Customisation
 
@@ -68,7 +70,7 @@ src/
 |---|---|
 | Name, nav links, hero text | `src/components/HeroSection.tsx` |
 | About paragraph, skills list | `src/components/AboutSection.tsx` |
-| Services list | `src/components/ServicesSection.tsx` (`SERVICES` array) |
+| Capabilities list | `src/components/ServicesSection.tsx` (`SERVICES` array) |
 | Projects, screenshots, live URLs | `src/components/ProjectsSection.tsx` (`PROJECTS` array) |
 | Contact methods | `src/components/ContactSection.tsx` (`CONTACT_METHODS` array) |
 | Project screenshots | drop new images in `public/` and reference as `/filename.png` |
@@ -77,4 +79,4 @@ src/
 
 ## Credits
 
-Designed & built by **Tarun Kumar Makode** · [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile/) · [GitHub](https://github.com/your-github-handle)
+Designed & built by **Tarun Kumar Makode** · [LinkedIn](https://www.linkedin.com/in/tarun-kumar-makode-805719290/) · [GitHub](https://github.com/Tarunmakode123) · [Email](mailto:aiwithtarun1@gmail.com)
