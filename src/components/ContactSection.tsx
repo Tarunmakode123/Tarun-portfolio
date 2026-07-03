@@ -56,7 +56,7 @@ const ContactSection = () => {
           className="text-center font-light uppercase tracking-widest text-[#D7E2EA]/60 mb-12 sm:mb-16 md:mb-20"
           style={{ fontSize: 'clamp(0.85rem, 1.4vw, 1.1rem)' }}
         >
-          Open to collaborations, freelance projects, and AI product opportunities.
+          Need an AI website, chatbot, voice agent, or automation system? Let&apos;s build it.
         </p>
       </FadeIn>
 

@@ -117,7 +117,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative h-screen w-full overflow-hidden bg-black">
+    <section ref={sectionRef} className="relative min-h-[100svh] md:h-screen w-full overflow-hidden bg-black">
       {/* Video background */}
       <video
         ref={videoRef}
@@ -141,13 +141,13 @@ const HeroSection = () => {
       <div className="relative z-10 flex h-full flex-col">
         {/* Top bar */}
         <FadeIn delay={0} y={-20} className="relative">
-          <div className="flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8">
-            <ul className="flex items-center gap-5 sm:gap-8 md:gap-12">
+          <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 pt-4 sm:pt-6 md:pt-8">
+            <ul className="flex items-center gap-3 sm:gap-5 md:gap-12">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-xs sm:text-sm font-medium uppercase tracking-[0.2em] text-white/80 transition hover:text-white"
+                    className="text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
                   >
                     {link.label}
                   </a>
@@ -157,7 +157,7 @@ const HeroSection = () => {
 
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] sm:text-xs font-medium uppercase tracking-[0.2em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
+              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 sm:px-5 sm:py-2.5 text-[9px] sm:text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
             >
               Email me
             </a>
@@ -166,7 +166,7 @@ const HeroSection = () => {
 
         {/* Middle-left: PORTFOLIO + Name + Subtitle */}
         <div className="flex flex-1 items-center">
-          <div className="w-full max-w-7xl px-6 md:px-10">
+          <div className="w-full max-w-7xl px-4 sm:px-6 md:px-10">
             <FadeIn delay={0.3} y={20}>
               <p className="mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] text-white/60">
                 PORTFOLIO · 2026
@@ -175,23 +175,46 @@ const HeroSection = () => {
 
             <FadeIn delay={0.5} y={40}>
               <h1
-                className="max-w-[7.5ch] font-black uppercase leading-[0.84] tracking-[-0.035em] text-white"
-                style={{ fontSize: 'clamp(2.35rem, 7vw, 7rem)' }}
+                className="max-w-[7.2ch] font-black uppercase leading-[0.82] tracking-[-0.04em] text-white"
+                style={{ fontSize: 'clamp(2.1rem, 6.8vw, 7rem)' }}
               >
                 TARUN<br />KUMAR<br />MAKODE
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.85} y={20}>
-              <p className="mt-5 md:mt-7 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.3em] text-white/75">
+              <p className="mt-4 sm:mt-5 md:mt-7 text-[9px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.24em] text-white/75 max-w-[20rem] sm:max-w-none">
                 AI DEVELOPER · CONTENT CREATOR · AUTOMATION
               </p>
+            </FadeIn>
+
+            <FadeIn delay={1} y={20}>
+              <p className="mt-4 sm:mt-5 max-w-md text-[13px] sm:text-base md:text-lg leading-relaxed text-white/72">
+                I build AI-powered websites, apps, chatbots, voice agents, and automation systems that help businesses move faster.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={1.1} y={18}>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md">
+                <a
+                  href="#projects"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#0C0C0C] transition hover:scale-[1.03] sm:w-auto"
+                >
+                  View projects
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03] sm:w-auto"
+                >
+                  Let&apos;s talk
+                </a>
+              </div>
             </FadeIn>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex items-end justify-between px-6 md:px-10 pb-7 sm:pb-10 md:pb-12">
+        <div className="flex items-end justify-between px-4 sm:px-6 md:px-10 pb-6 sm:pb-10 md:pb-12">
           {/* Scroll indicator */}
           <FadeIn delay={1.1} y={20}>
             <a href="#about" aria-label="Scroll to next section" className="group flex flex-col items-center gap-3">
