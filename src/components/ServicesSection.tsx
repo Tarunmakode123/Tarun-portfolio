@@ -39,6 +39,14 @@ const SERVICES = [
   },
 ];
 
+const HIGHLIGHTS = [
+  'AI-powered websites',
+  'AI-powered apps',
+  'AI chatbots',
+  'AI voice agents',
+  'AI automation systems',
+];
+
 const ServicesSection = () => {
   return (
     <section
@@ -53,9 +61,27 @@ const ServicesSection = () => {
           What I Build
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-sm font-medium uppercase tracking-[0.22em] text-[#0C0C0C]/66 sm:text-base">
-          AI products, intelligent automation, and scalable digital solutions.
+          I build AI systems that automate work, improve support, and create better digital experiences.
         </p>
         <div className="mx-auto mt-7 h-px w-24 bg-[#0C0C0C]/12 sm:mt-8" />
+      </FadeIn>
+
+      <FadeIn y={24} delay={0.12}>
+        <div className="mx-auto mt-10 max-w-5xl rounded-[28px] border border-[#0C0C0C]/12 bg-[#F5F7FA] px-5 py-6 sm:px-8 sm:py-7 md:px-10 md:py-8 shadow-[0_14px_40px_rgba(12,12,12,0.06)]">
+          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.42em] text-[#0C0C0C]/48 sm:text-xs">
+            I build
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3 sm:gap-4">
+            {HIGHLIGHTS.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[#0C0C0C]/12 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0C0C0C] shadow-sm sm:px-5 sm:py-2.5 sm:text-xs"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
       </FadeIn>
 
       <div className="mx-auto max-w-5xl">
