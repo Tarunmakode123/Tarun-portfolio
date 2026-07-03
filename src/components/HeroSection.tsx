@@ -175,10 +175,10 @@ const HeroSection = () => {
 
             <FadeIn delay={0.5} y={40}>
               <h1
-                className="font-black uppercase leading-[0.88] tracking-tight text-white"
-                style={{ fontSize: 'clamp(2.5rem, 9vw, 8.5rem)' }}
+                className="max-w-[7.5ch] font-black uppercase leading-[0.84] tracking-[-0.035em] text-white"
+                style={{ fontSize: 'clamp(2.35rem, 7vw, 7rem)' }}
               >
-                TARUN<br />KUMAR MAKODE
+                TARUN<br />KUMAR<br />MAKODE
               </h1>
             </FadeIn>
 
