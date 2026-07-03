@@ -10,12 +10,14 @@ const NAV_LINKS = [
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [showSoundHint, setShowSoundHint] = useState(true);
 
   const ensurePlaying = () => {
     const v = videoRef.current;
     if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
     const playPromise = v.play();
     if (playPromise) {
       playPromise.catch(() => {});
@@ -124,6 +126,8 @@ const HeroSection = () => {
         loop
         playsInline
         preload="auto"
+        onLoadedData={ensurePlaying}
+        onCanPlay={ensurePlaying}
         className="absolute inset-0 h-full w-full object-cover object-top"
       >
         <source src="/tarun-avator-potfolio-video.mp4" type="video/mp4" />
