@@ -26,7 +26,7 @@ const SKILL_GROUPS = [
 const STATS = [
   '10+ Projects Built',
   '3+ AI Products',
-  '500K+ Content Reach',
+  'Content Creator',
   '2026 Portfolio',
 ];
 
