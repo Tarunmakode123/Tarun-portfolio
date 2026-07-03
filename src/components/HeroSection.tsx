@@ -10,7 +10,7 @@ const NAV_LINKS = [
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [showSoundHint, setShowSoundHint] = useState(true);
 
   const ensurePlaying = () => {
