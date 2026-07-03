@@ -132,51 +132,73 @@ const HeroSection = () => {
 
   return (
     <section ref={sectionRef} className="relative w-full bg-black md:h-screen md:overflow-hidden">
-      {/* Mobile hero stack */}
-      <div className="md:hidden">
-        <div className="relative h-[58svh] w-full overflow-hidden">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted={muted}
-            loop
-            playsInline
-            preload="metadata"
-            onLoadedData={ensurePlaying}
-            onCanPlay={ensurePlaying}
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          >
-            <source src="/tarun-avator-potfolio-video.mp4" type="video/mp4" />
-          </video>
+      {/* Shared video stage */}
+      <div className="relative h-[58svh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted={muted}
+          loop
+          playsInline
+          preload="metadata"
+          onLoadedData={ensurePlaying}
+          onCanPlay={ensurePlaying}
+          className="absolute inset-0 h-full w-full object-cover object-center md:object-top"
+        >
+          <source src="/tarun-avator-potfolio-video.mp4" type="video/mp4" />
+        </video>
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/25 to-black/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/25 to-black/75 md:bg-gradient-to-r md:from-black/80 md:via-black/35 md:to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/35 md:bg-gradient-to-b md:from-black/40 md:via-transparent md:to-black/70" />
 
-          <div className="absolute left-0 right-0 top-0 z-10 px-4 pt-4">
-            <div className="flex items-center justify-between">
-              <ul className="flex items-center gap-3">
-                {NAV_LINKS.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-[9px] font-medium uppercase tracking-[0.16em] text-white/80 transition hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        <div className="absolute left-0 right-0 top-0 z-10 px-4 pt-4 md:px-4 md:pt-4">
+          <div className="flex items-center justify-between">
+            <ul className="flex items-center gap-3 md:gap-3 sm:gap-5">
+              {NAV_LINKS.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-[9px] font-medium uppercase tracking-[0.16em] text-white/80 transition hover:text-white md:text-[10px] sm:text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[8px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/20"
-              >
-                Email me
-              </a>
-            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[8px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/20 md:px-3 md:py-1.5 sm:px-5 sm:py-2.5 sm:text-xs"
+            >
+              Email me
+            </a>
           </div>
         </div>
 
+        <div className="absolute bottom-4 right-4 z-20 md:hidden">
+          <button
+            onClick={toggleMute}
+            aria-label={muted ? 'Unmute video' : 'Mute video'}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/35 text-white backdrop-blur-md shadow-[0_8px_25px_rgba(0,0,0,0.35)]"
+          >
+            {muted ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <line x1="23" y1="9" x2="17" y2="15" />
+                <line x1="17" y1="9" x2="23" y2="15" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile hero stack */}
+      <div className="md:hidden">
         <div className="px-4 pt-5 pb-7 text-center">
           <FadeIn delay={0.15} y={18}>
             <p className="mb-2 text-[9px] font-medium uppercase tracking-[0.32em] text-white/60">
@@ -225,24 +247,6 @@ const HeroSection = () => {
           <FadeIn delay={0.65} y={12}>
             <div className="mt-5 flex items-center justify-between text-[8px] uppercase tracking-[0.3em] text-white/55">
               <span>Scroll</span>
-              <button
-                onClick={toggleMute}
-                aria-label={muted ? 'Unmute video' : 'Mute video'}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md"
-              >
-                {muted ? (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                    <line x1="23" y1="9" x2="17" y2="15" />
-                    <line x1="17" y1="9" x2="23" y2="15" />
-                  </svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-                  </svg>
-                )}
-              </button>
             </div>
           </FadeIn>
         </div>
@@ -250,25 +254,6 @@ const HeroSection = () => {
 
       {/* Desktop hero */}
       <div className="relative hidden h-full flex-col md:flex">
-        {/* Video background */}
-        <video
-          ref={videoRef}
-          autoPlay
-          muted={muted}
-          loop
-          playsInline
-          preload="metadata"
-          onLoadedData={ensurePlaying}
-          onCanPlay={ensurePlaying}
-          className="absolute inset-0 h-full w-full object-cover object-top"
-        >
-          <source src="/tarun-avator-potfolio-video.mp4" type="video/mp4" />
-        </video>
-
-        {/* Cinematic gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
-
         {/* Content layer */}
         <div className="relative z-10 flex h-full flex-col">
         {/* Top bar */}
