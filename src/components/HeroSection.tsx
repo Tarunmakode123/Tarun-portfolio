@@ -151,7 +151,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/25 to-black/75 md:bg-gradient-to-r md:from-black/80 md:via-black/35 md:to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/35 md:bg-gradient-to-b md:from-black/40 md:via-transparent md:to-black/70" />
 
-        <div className="absolute left-0 right-0 top-0 z-10 px-4 pt-4 md:px-4 md:pt-4">
+        <div className="absolute left-0 right-0 top-0 z-10 px-4 pt-4 md:hidden">
           <div className="flex items-center justify-between">
             <ul className="flex items-center gap-3 md:gap-3 sm:gap-5">
               {NAV_LINKS.map((link) => (
