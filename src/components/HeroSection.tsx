@@ -11,13 +11,18 @@ const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const mutedRef = useRef(true);
   const [showSoundHint, setShowSoundHint] = useState(true);
+
+  // Keep mutedRef in sync with muted state
+  useEffect(() => {
+    mutedRef.current = muted;
+  }, [muted]);
 
   const ensurePlaying = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = true;
-    v.defaultMuted = true;
+    v.muted = mutedRef.current;
     const playPromise = v.play();
     if (playPromise) {
       playPromise.catch(() => {});
@@ -60,9 +65,7 @@ const HeroSection = () => {
     const v = videoRef.current;
     if (!v) return;
 
-    v.muted = true;
-    v.defaultMuted = true;
-    v.setAttribute('muted', '');
+    v.muted = mutedRef.current;
     v.setAttribute('playsinline', '');
     v.setAttribute('webkit-playsinline', 'true');
     ensurePlaying();
@@ -124,9 +127,14 @@ const HeroSection = () => {
   const toggleMute = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
+    const nextMuted = !muted;
+    v.muted = nextMuted;
+    setMuted(nextMuted);
+    mutedRef.current = nextMuted;
     setShowSoundHint(false);
+    if (!nextMuted) {
+      v.play().catch(() => {});
+    }
   };
 
   return (
