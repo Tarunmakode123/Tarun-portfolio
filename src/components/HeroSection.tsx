@@ -65,7 +65,6 @@ const HeroSection = () => {
     v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
     v.setAttribute('webkit-playsinline', 'true');
-    v.load();
     ensurePlaying();
   }, []);
 
@@ -140,7 +139,7 @@ const HeroSection = () => {
           muted={muted}
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedData={ensurePlaying}
           onCanPlay={ensurePlaying}
           className="absolute inset-0 h-full w-full object-cover object-center md:object-top"
