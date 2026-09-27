@@ -27,7 +27,7 @@ const PROJECTS: ProjectData[] = [
     name: 'PlaceIQ – Placement Management Platform',
     summary: 'A streamlined platform for managing placements, tracking progress, and guiding students.',
     liveUrl: 'https://placementiq-suite.vercel.app',
-    image: '/project 2.png',
+    image: '/project2.png',
   },
   {
     number: '03',
@@ -35,7 +35,7 @@ const PROJECTS: ProjectData[] = [
     name: 'CampusShortlist – Automated Eligibility Filtering',
     summary: 'An automation tool that filters candidates based on eligibility and saves manual review time.',
     liveUrl: 'https://talent-filter-pro.vercel.app',
-    image: '/project 3.png',
+    image: '/project3.png',
   },
   {
     number: '04',
@@ -43,7 +43,7 @@ const PROJECTS: ProjectData[] = [
     name: 'SarkariSahayak – Government Scheme Discovery Platform',
     summary: 'A discovery platform that helps users find relevant government schemes faster.',
     liveUrl: 'https://scheme-seeker-nine.vercel.app',
-    image: '/project 4.png',
+    image: '/project4.png',
   },
 ];
 
