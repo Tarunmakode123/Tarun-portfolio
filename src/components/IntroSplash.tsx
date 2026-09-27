@@ -56,7 +56,7 @@ const IntroSplash = ({ onComplete }: IntroSplashProps) => {
             autoPlay
             playsInline
             onEnded={handleComplete}
-            className="h-full w-full object-contain max-h-screen max-w-screen"
+            className="h-full w-full object-cover"
           >
             <source src="/TAi_logo_reveal_effect_20260927201853-cleaned.mp4" type="video/mp4" />
           </video>
