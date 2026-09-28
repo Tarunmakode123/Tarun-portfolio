@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0C0C0C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D7E2EA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#0C0C0C" stroke="#00F0FF" stroke-width="12"/>
+  <circle cx="256" cy="256" r="230" fill="url(#glow)"/>
+
+  <!-- Circuit Accents -->
+  <path d="M 50 256 L 115 256 M 397 256 L 462 256" stroke="#00F0FF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="48" cy="256" r="8" fill="#00F0FF"/>
+  <circle cx="464" cy="256" r="8" fill="#00F0FF"/>
+
+  <!-- TAi Text -->
+  <text x="240" y="325" font-family="Kanit, Arial, sans-serif" font-weight="900" font-size="190" fill="url(#textGrad)" text-anchor="middle" letter-spacing="-4">TAi</text>
+  <circle cx="366" cy="184" r="18" fill="#00F0FF"/>
+</svg>
