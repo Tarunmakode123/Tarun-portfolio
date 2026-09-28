@@ -69,7 +69,7 @@ const ContactSection = () => {
       </FadeIn>
 
       {/* Contact cards */}
-      <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
         {CONTACT_METHODS.map((method, i) => {
           const Icon = method.icon;
 
@@ -79,40 +79,36 @@ const ContactSection = () => {
                 href={method.href}
                 download={method.download ? 'Tarun_Kumar_Makode_Resume.pdf' : undefined}
                 target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${method.label}: ${method.value}`}
-                    className="group relative flex h-full w-full min-w-0 flex-col justify-between gap-8 overflow-hidden rounded-[28px] sm:rounded-[32px] border-2 border-[#D7E2EA]/20 bg-[#141418] p-6 sm:p-7 md:p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#D7E2EA]/55 hover:bg-[#1a1a20] hover:shadow-[0_16px_45px_rgba(215,226,234,0.08)]"
+                rel="noopener noreferrer"
+                aria-label={`${method.label}: ${method.value}`}
+                className="group relative flex h-full w-full min-w-0 flex-col justify-between gap-6 overflow-hidden rounded-[24px] sm:rounded-[28px] border-2 border-[#D7E2EA]/20 bg-[#141418] p-4 sm:p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#D7E2EA]/55 hover:bg-[#1a1a20] hover:shadow-[0_16px_45px_rgba(215,226,234,0.08)]"
               >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D7E2EA]/0 via-[#D7E2EA]/0 to-[#D7E2EA]/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D7E2EA]/0 via-[#D7E2EA]/0 to-[#D7E2EA]/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 <div className="flex items-start justify-between">
-                  <div className="rounded-full border border-[#D7E2EA]/20 p-3 sm:p-3.5 transition-colors duration-300 group-hover:border-[#D7E2EA]/50">
+                  <div className="rounded-full border border-[#D7E2EA]/20 p-2.5 sm:p-3 transition-colors duration-300 group-hover:border-[#D7E2EA]/50">
                     <Icon
                       className="text-[#D7E2EA]"
-                      size={22}
+                      size={20}
                       strokeWidth={1.5}
                     />
                   </div>
                   <ArrowUpRight
                     className="text-[#D7E2EA]/40 transition-all duration-300 group-hover:text-[#D7E2EA] group-hover:rotate-12"
-                    size={22}
+                    size={20}
                     strokeWidth={1.5}
                   />
                 </div>
 
-                <div className="relative flex min-w-0 flex-col gap-2 sm:gap-3">
-                  <span
-                    className="font-light uppercase tracking-widest text-[#D7E2EA]/50"
-                    style={{ fontSize: 'clamp(0.7rem, 1.1vw, 0.9rem)' }}
-                  >
+                <div className="relative flex min-w-0 flex-col gap-1.5">
+                  <span className="font-light uppercase tracking-widest text-[#D7E2EA]/50 text-[10px] sm:text-[11px]">
                     {method.label}
                   </span>
-                  <span
-                    className="font-medium text-[#D7E2EA] leading-snug tracking-tight"
-                    style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1.15rem)' }}
-                  >
-                    {method.value}
-                  </span>
+                  <div className="min-h-[2.5rem] flex items-start">
+                    <span className="font-medium text-[#D7E2EA] leading-snug tracking-tight text-[12px] sm:text-[13px] md:text-sm break-all sm:break-normal">
+                      {method.value}
+                    </span>
+                  </div>
                 </div>
               </a>
             </FadeIn>
