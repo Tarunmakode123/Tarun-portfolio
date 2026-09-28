@@ -173,12 +173,23 @@ const HeroSection = () => {
               ))}
             </ul>
 
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[8px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/20 md:px-3 md:py-1.5 sm:px-5 sm:py-2.5 sm:text-xs"
-            >
-              Email me
-            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href="/resume.pdf"
+                download="Tarun_Kumar_Makode_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[8px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/20"
+              >
+                Resume
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[8px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/20 md:px-3 md:py-1.5 sm:px-5 sm:py-2.5 sm:text-xs"
+              >
+                Email me
+              </a>
+            </div>
           </div>
         </div>
 
@@ -243,6 +254,18 @@ const HeroSection = () => {
                 View projects
               </a>
               <a
+                href="/resume.pdf"
+                download="Tarun_Kumar_Makode_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
+              >
+                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download CV
+              </a>
+              <a
                 href="#contact"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
               >
@@ -279,12 +302,26 @@ const HeroSection = () => {
               ))}
             </ul>
 
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 sm:px-5 sm:py-2.5 text-[9px] sm:text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
-            >
-              Email me
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="/resume.pdf"
+                download="Tarun_Kumar_Makode_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 sm:px-4 sm:py-2 text-[9px] sm:text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
+              >
+                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Resume
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 sm:px-5 sm:py-2.5 text-[9px] sm:text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03]"
+              >
+                Email me
+              </a>
+            </div>
           </div>
         </FadeIn>
 
@@ -325,6 +362,18 @@ const HeroSection = () => {
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#0C0C0C] transition hover:scale-[1.03] sm:w-auto"
                 >
                   View projects
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download="Tarun_Kumar_Makode_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-[1.03] sm:w-auto"
+                >
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download CV
                 </a>
                 <a
                   href="#contact"

@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Linkedin, Github, ArrowUpRight } from 'lucide-react';
+import { Mail, MessageCircle, Linkedin, Github, FileText, ArrowUpRight } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 interface ContactMethod {
@@ -6,6 +6,7 @@ interface ContactMethod {
   label: string;
   value: string;
   href: string;
+  download?: boolean;
 }
 
 const CONTACT_METHODS: ContactMethod[] = [
@@ -32,6 +33,13 @@ const CONTACT_METHODS: ContactMethod[] = [
     label: 'GitHub',
     value: 'github.com/Tarunmakode123',
     href: 'https://github.com/Tarunmakode123',
+  },
+  {
+    icon: FileText,
+    label: 'Resume',
+    value: 'Download Resume (PDF)',
+    href: '/resume.pdf',
+    download: true,
   },
 ];
 
@@ -61,7 +69,7 @@ const ContactSection = () => {
       </FadeIn>
 
       {/* Contact cards */}
-          <div className="mx-auto grid max-w-5xl grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
         {CONTACT_METHODS.map((method, i) => {
           const Icon = method.icon;
 
@@ -69,7 +77,8 @@ const ContactSection = () => {
             <FadeIn key={method.label} delay={i * 0.1} y={30}>
               <a
                 href={method.href}
-                    target="_blank"
+                download={method.download ? 'Tarun_Kumar_Makode_Resume.pdf' : undefined}
+                target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${method.label}: ${method.value}`}
                     className="group relative flex h-full w-full min-w-0 flex-col justify-between gap-8 overflow-hidden rounded-[28px] sm:rounded-[32px] border-2 border-[#D7E2EA]/20 bg-[#141418] p-6 sm:p-7 md:p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#D7E2EA]/55 hover:bg-[#1a1a20] hover:shadow-[0_16px_45px_rgba(215,226,234,0.08)]"
