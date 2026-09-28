@@ -11,7 +11,7 @@ const ABOUT_TEXT_SECONDARY =
 const SKILL_GROUPS = [
   {
     label: 'AI ENGINEERING',
-    items: ['OpenAI', 'Claude', 'Gemini', 'Prompt Engineering', 'RAG'],
+    items: ['OpenAI', 'Claude', 'Gemini', 'LangChain', 'Prompt Engineering', 'RAG'],
   },
   {
     label: 'AUTOMATION',
@@ -19,13 +19,13 @@ const SKILL_GROUPS = [
   },
   {
     label: 'DEVELOPMENT',
-    items: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'Python'],
+    items: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'Python', 'TypeScript'],
   },
 ];
 
 const STATS = [
-  '10+ Projects Built',
-  '3+ AI Products',
+  '80+ Projects Built',
+  '15+ AI Products',
   'Content Creator',
   '2026 Portfolio',
 ];
