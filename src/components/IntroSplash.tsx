@@ -50,13 +50,25 @@ const IntroSplash = ({ onComplete }: IntroSplashProps) => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden select-none"
         >
-          {/* Logo animation video */}
+          {/* Ambient blurred backdrop for widescreen desktop */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover blur-3xl opacity-40 scale-110 pointer-events-none hidden md:block"
+          >
+            <source src="/TAi_logo_reveal_effect_20260927201853-cleaned.mp4" type="video/mp4" />
+          </video>
+
+          {/* Main Logo animation video */}
           <video
             ref={videoRef}
             autoPlay
             playsInline
             onEnded={handleComplete}
-            className="h-full w-full object-cover"
+            className="relative z-10 h-full w-full object-cover md:object-contain max-h-screen max-w-screen"
           >
             <source src="/TAi_logo_reveal_effect_20260927201853-cleaned.mp4" type="video/mp4" />
           </video>
