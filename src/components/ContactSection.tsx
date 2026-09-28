@@ -19,25 +19,25 @@ const CONTACT_METHODS: ContactMethod[] = [
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+91 8305059502',
+    value: '+91 83050 59502',
     href: 'https://wa.me/918305059502',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/tarun-kumar-makode-805719290',
+    value: 'Tarun Kumar Makode',
     href: 'https://www.linkedin.com/in/tarun-kumar-makode-805719290/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: 'github.com/Tarunmakode123',
+    value: '@Tarunmakode123',
     href: 'https://github.com/Tarunmakode123',
   },
   {
     icon: FileText,
     label: 'Resume',
-    value: 'Download Resume (PDF)',
+    value: 'Download CV (PDF)',
     href: '/resume.pdf',
     download: true,
   },
@@ -108,8 +108,8 @@ const ContactSection = () => {
                     {method.label}
                   </span>
                   <span
-                    className="font-medium text-[#D7E2EA] break-words leading-snug"
-                    style={{ fontSize: 'clamp(1rem, 1.8vw, 1.4rem)' }}
+                    className="font-medium text-[#D7E2EA] leading-snug tracking-tight"
+                    style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1.15rem)' }}
                   >
                     {method.value}
                   </span>
