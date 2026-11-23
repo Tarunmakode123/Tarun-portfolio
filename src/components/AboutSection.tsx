@@ -10,21 +10,34 @@ const ABOUT_TEXT_SECONDARY =
 
 const SKILL_GROUPS = [
   {
-    label: 'AI ENGINEERING',
-    items: ['OpenAI', 'Claude', 'Gemini', 'LangChain', 'Prompt Engineering', 'RAG'],
+    label: 'AGENTIC AI & LLMS',
+    items: [
+      'LangGraph',
+      'LangChain',
+      'MCP',
+      'RAG',
+      'OpenAI',
+      'Claude',
+      'Gemini',
+      'Prompt Engineering',
+    ],
   },
   {
-    label: 'AUTOMATION',
-    items: ['n8n', 'Workflow Automation', 'APIs', 'Integrations'],
+    label: 'EVALS & AI SAFETY',
+    items: ['DeepEval', 'Guardrails', 'AI Safety & Security'],
   },
   {
-    label: 'DEVELOPMENT',
-    items: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'Python', 'TypeScript'],
+    label: 'BACKEND & APIS',
+    items: ['FastAPI', 'REST APIs', 'Python'],
+  },
+  {
+    label: 'DEVOPS & DEPLOYMENT',
+    items: ['Docker', 'CI/CD Pipelines', 'Render', 'n8n Automation'],
   },
 ];
 
 const STATS = [
-  '80+ Projects Built',
+  '40+ Projects Built',
   '15+ AI Products',
   'Content Creator',
   '2026 Portfolio',
