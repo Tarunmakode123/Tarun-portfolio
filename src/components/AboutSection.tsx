@@ -16,6 +16,7 @@ const SKILL_GROUPS = [
       'LangChain',
       'MCP',
       'RAG',
+      'Fine-Tuning (LoRA & QLoRA)',
       'OpenAI',
       'Claude',
       'Gemini',
