@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import IntroSplash from './components/IntroSplash';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -27,6 +28,7 @@ const App = () => {
       <ServicesSection />
       <ProjectsSection />
       <ContactSection />
+      <Analytics />
     </main>
   );
 };
